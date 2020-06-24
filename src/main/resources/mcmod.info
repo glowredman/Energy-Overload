@@ -1,0 +1,16 @@
+[
+{
+  "modid": "fpsp",
+  "name": "FPSP Core",
+  "description": "Der Fakt, dasss du diese Beschreibung liest, spricht für sich.",
+  "version": "${version}",
+  "mcversion": "1.12.2",
+  "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  "updateUrl": "",
+  "authorList": ["glowredman"],
+  "credits": "The Forge and FML guys, for making this example",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
