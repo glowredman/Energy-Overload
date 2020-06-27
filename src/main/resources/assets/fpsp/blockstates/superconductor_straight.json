@@ -1,0 +1,23 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "fpsp:superconductor_straight_x"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": {
+		"model": "fpsp:superconductor_straight_x"
+	},
+    "axis": {
+      "x": {
+		"model": "fpsp:superconductor_straight_x"
+	  },
+      "y": {
+		"model": "fpsp:superconductor_straight_y"
+	  },
+      "z": {
+		"model": "fpsp:superconductor_straight_z"
+	  }
+    }
+  }
+}

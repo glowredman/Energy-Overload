@@ -10,7 +10,8 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void preInit() {
 		super.preInit();
-		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(Reference.CORNER), 0, new ModelResourceLocation(Reference.MODID + ":superconductor", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(Reference.CORNER), 0, new ModelResourceLocation(Reference.MODID + ":superconductor_corner", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(Reference.STRAIGHT), 0, new ModelResourceLocation(Reference.MODID + ":superconductor_straight", "inventory"));
 	}
 
 }

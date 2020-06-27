@@ -14,6 +14,7 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumFacing.Axis;
@@ -40,6 +41,11 @@ public class BlockStraight extends Block implements ITileEntityProvider {
 	@Override
 	public boolean isOpaqueCube(IBlockState state) {
 		return false;
+	}
+	
+	@Override
+	public BlockRenderLayer getBlockLayer() {
+		return BlockRenderLayer.CUTOUT;
 	}
 	
 	@Override
@@ -76,18 +82,31 @@ public class BlockStraight extends Block implements ITileEntityProvider {
 	}
 	
 	@Override
-	public boolean isTranslucent(IBlockState state) {
-		return true;
-	}
-	
-	@Override
 	public IBlockState getStateFromMeta(int meta) {
-		return this.getDefaultState();
+		switch (meta) {
+		case 0:
+			return getDefaultState().withProperty(AXIS, Axis.X);
+		case 1:
+			return getDefaultState().withProperty(AXIS, Axis.Y);
+		case 2:
+			return getDefaultState().withProperty(AXIS, Axis.Z);
+		default:
+			return getDefaultState();
+		}
 	}
 	
 	@Override
 	public int getMetaFromState(IBlockState state) {
-		return 0;
+		switch (state.getValue(AXIS)) {
+		case X:
+			return 0;
+		case Y:
+			return 1;
+		case Z:
+			return 2;
+		default:
+			return 0;
+		}
 	}
 
 	@Override
@@ -100,6 +119,8 @@ public class BlockStraight extends Block implements ITileEntityProvider {
 		return EnumBlockRenderType.MODEL;
 	}
 	
+	
+	
 	@Override
 	protected BlockStateContainer createBlockState() {
 		return new BlockStateContainer(this, AXIS);
@@ -107,8 +128,8 @@ public class BlockStraight extends Block implements ITileEntityProvider {
 	
 	@Override
 	public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
-		tooltip.add("§9Can transfer over 179 Uncentillion (1.79\u221910³\u2070\u2078) EU per Tick!");
-		tooltip.add("§8§oCan't turn corners...");
+		tooltip.add("Using Electron Acceleration Technology");
+		tooltip.add("\u00a79Can transfer over 179 Uncentillion (1.79\u221910\u00b3\u2070\u2078) EU per Tick!");
 	}
 
 }

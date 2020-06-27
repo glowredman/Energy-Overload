@@ -31,7 +31,8 @@ public class BlockCorner extends Block implements ITileEntityProvider {
 	
 	@Override
 	public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
-		tooltip.add("§9 Can transfer over 179 Uncentillion (1.79\u221910³\u2070\u2078) EU per Tick!");
+		tooltip.add("Using Electron Acceleration Technology");
+		tooltip.add("\u00a79 Can transfer over 179 Uncentillion (1.79\u221910\u00b3\u2070\u2078) EU per Tick!");
 	}
 
 }
