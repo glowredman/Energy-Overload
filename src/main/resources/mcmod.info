@@ -5,10 +5,10 @@
   "description": "Der Fakt, dasss du diese Beschreibung liest, spricht für sich.",
   "version": "${version}",
   "mcversion": "1.12.2",
-  "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  "url": "https://tinyurl.com/fpsp-core",
   "updateUrl": "",
   "authorList": ["glowredman"],
-  "credits": "The Forge and FML guys, for making this example",
+  "credits": "",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

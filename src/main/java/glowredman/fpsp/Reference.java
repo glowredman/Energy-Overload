@@ -10,7 +10,7 @@ public class Reference {
 	public static final String DEPENDENCIES = "required-after:ic2";
 	public static final String MODID = "fpsp";
 	public static final String MODNAME = "FPSP Core";
-	public static final String MODVERSION = "${version}";
+	public static final String MODVERSION = "0.1-alpha";
 	
 	public static final String COMMON = "glowredman.fpsp.proxy.CommonProxy";
 	public static final String CLIENT = "glowredman.fpsp.proxy.ClientProxy";
