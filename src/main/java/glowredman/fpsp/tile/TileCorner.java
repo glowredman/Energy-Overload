@@ -1,4 +1,4 @@
-package glowredman.fpsp.block;
+package glowredman.fpsp.tile;
 
 import ic2.api.energy.event.EnergyTileLoadEvent;
 import ic2.api.energy.event.EnergyTileUnloadEvent;
@@ -10,45 +10,22 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraftforge.common.MinecraftForge;
 
-public class TileStraight extends TileEntity implements IEnergyConductor, ITickable {
+public class TileCorner extends TileEntity implements IEnergyConductor, ITickable {
 	
 	private boolean loaded;
 	
-	public TileStraight() {
-		loaded = false;
+	public TileCorner() {
+		this.loaded = false;
 	}
 
 	@Override
 	public boolean acceptsEnergyFrom(IEnergyEmitter emitter, EnumFacing side) {
-		return side.getAxis() == world.getBlockState(pos).getValue(BlockStraight.AXIS);
+		return true;
 	}
 
 	@Override
 	public boolean emitsEnergyTo(IEnergyAcceptor receiver, EnumFacing side) {
-		return side.getAxis() == world.getBlockState(pos).getValue(BlockStraight.AXIS);
-	}
-
-	@Override
-	public void update() {
-		if(!loaded && !world.isRemote) {
-			MinecraftForge.EVENT_BUS.post(new EnergyTileLoadEvent(this));
-			loaded = true;
-		}
-	}
-	
-	@Override
-	public void invalidate() {
-		super.invalidate();
-		onChunkUnload();
-	}
-	
-	@Override
-	public void onChunkUnload() {
-		super.onChunkUnload();
-		if(loaded) {
-			MinecraftForge.EVENT_BUS.post(new EnergyTileUnloadEvent(this));
-			loaded = false;
-		}
+		return true;
 	}
 
 	@Override
@@ -73,11 +50,33 @@ public class TileStraight extends TileEntity implements IEnergyConductor, ITicka
 
 	@Override
 	public void removeInsulation() {
-		
 	}
 
 	@Override
 	public void removeConductor() {
+	}
+	
+	@Override
+	public void invalidate() {
+		super.invalidate();
+		onChunkUnload();
+	}
+	
+	@Override
+	public void onChunkUnload() {
+		super.onChunkUnload();
+		if(loaded) {
+			MinecraftForge.EVENT_BUS.post(new EnergyTileUnloadEvent(this));
+			loaded = false;
+		}
+	}
+
+	@Override
+	public void update() {
+		if(!loaded && !world.isRemote) {
+			MinecraftForge.EVENT_BUS.post(new EnergyTileLoadEvent(this));
+			loaded = true;
+		}
 	}
 
 }

@@ -1,8 +1,8 @@
 package glowredman.fpsp.proxy;
 
 import glowredman.fpsp.Reference;
-import glowredman.fpsp.block.TileCorner;
-import glowredman.fpsp.block.TileStraight;
+import glowredman.fpsp.tile.TileCorner;
+import glowredman.fpsp.tile.TileStraight;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;

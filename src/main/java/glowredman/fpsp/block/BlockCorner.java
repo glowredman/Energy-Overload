@@ -3,6 +3,7 @@ package glowredman.fpsp.block;
 import java.util.List;
 
 import glowredman.fpsp.Reference;
+import glowredman.fpsp.tile.TileCorner;
 import ic2.core.IC2;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
