@@ -1,5 +1,7 @@
 package glowredman.fpsp;
 
+import java.util.HashMap;
+
 import glowredman.fpsp.block.BlockCorner;
 import glowredman.fpsp.block.BlockStraight;
 import net.minecraft.block.Block;
@@ -17,5 +19,7 @@ public class Reference {
 	
 	public static final Block CORNER = new BlockCorner();
 	public static final Block STRAIGHT = new BlockStraight();
-
+	
+	public static HashMap<Integer, Class> transformerTEs = new HashMap<Integer, Class>();
+	
 }

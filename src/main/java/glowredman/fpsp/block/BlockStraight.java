@@ -32,10 +32,10 @@ public class BlockStraight extends Block implements ITileEntityProvider {
 		super(Material.GLASS);
 		this.setCreativeTab(IC2.tabIC2);
 		this.setDefaultState(getDefaultState().withProperty(AXIS, Axis.X));
-		this.setHardness(5);
+		this.setHardness(3);
 		this.setHarvestLevel("pickaxe", 2);
 		this.setRegistryName("superconductor_straight");
-		this.setResistance(6);
+		this.setResistance(3);
 		this.setUnlocalizedName(Reference.MODID + ".superconductor.straight");
 	}
 	

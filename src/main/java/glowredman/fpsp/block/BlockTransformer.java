@@ -4,6 +4,7 @@ import java.util.List;
 
 import glowredman.fpsp.Reference;
 import glowredman.fpsp.tile.TileTransformer;
+import glowredman.fpsp.tile.transformer.*;
 import ic2.api.energy.EnergyNet;
 import ic2.core.IC2;
 import net.minecraft.block.Block;
@@ -18,9 +19,10 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
-import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 
 public class BlockTransformer extends Block implements ITileEntityProvider {
@@ -45,23 +47,25 @@ public class BlockTransformer extends Block implements ITileEntityProvider {
 	
 	@Override
 	public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
+		super.onBlockPlacedBy(worldIn, pos, state, placer, stack);
 		worldIn.setBlockState(pos, state.withProperty(INPUT, BlockStraight.getFacingFromEntity(pos, placer)));
 	}
 	
 	@Override
-	public void onBlockClicked(World worldIn, BlockPos pos, EntityPlayer playerIn) {
-		super.onBlockClicked(worldIn, pos, playerIn);
+	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 		TileEntity te = worldIn.getTileEntity(pos);
 		if(te instanceof TileTransformer) {
 			playerIn.sendMessage(new TextComponentString("Current Energy stored: " + ((TileTransformer) te).buffer + " EU"));
 		}
+		return super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
 	}
 	
 	@Override
 	public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
-		tooltip.add("Input: " + in + " EU/t");
-		tooltip.add("Output: " + out + " EU/t");
-		tooltip.add(TextFormatting.ITALIC + "Can convert from/to FE");
+		tooltip.add(I18n.translateToLocal(Reference.MODID + ".transformer." + outputTier + ".desc"));
+		tooltip.add("§6Input: " + in + " EU/t");
+		tooltip.add("§6Output: " + out + " EU/t");
+		tooltip.add("§a§oCan convert from/to FE");
 	}
 	
 	@Override
@@ -111,7 +115,38 @@ public class BlockTransformer extends Block implements ITileEntityProvider {
 
 	@Override
 	public TileEntity createNewTileEntity(World worldIn, int meta) {
-		return new TileTransformer(outputTier);
+		switch (outputTier) {
+		case 5:
+			return new TileTransformerT5();
+		case 6:
+			return new TileTransformerT6();
+		case 7:
+			return new TileTransformerT7();
+		case 8:
+			return new TileTransformerT8();
+		case 9:
+			return new TileTransformerT9();
+		case 10:
+			return new TileTransformerT10();
+		case 11:
+			return new TileTransformerT11();
+		case 12:
+			return new TileTransformerT12();
+		case 13:
+			return new TileTransformerT13();
+		case 14:
+			return new TileTransformerT14();
+		case 15:
+			return new TileTransformerT15();
+		case 16:
+			return new TileTransformerT16();
+		case 17:
+			return new TileTransformerT17();
+		case 18:
+			return new TileTransformerT18();
+		default:
+			return null;
+		}
 	}
 
 }
