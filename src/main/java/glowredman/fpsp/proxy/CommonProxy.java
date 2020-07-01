@@ -6,7 +6,6 @@ import glowredman.fpsp.tile.TileCorner;
 import glowredman.fpsp.tile.TileStraight;
 import glowredman.fpsp.tile.TileTransformer;
 import glowredman.fpsp.tile.transformer.*;
-import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -40,11 +39,11 @@ public class CommonProxy {
 	}
 	
 	private void registerTransformer(int tier, Class<? extends TileTransformer> clazz) {
-		Block block = new BlockTransformer(tier);
+		BlockTransformer block = new BlockTransformer(tier);
 		ForgeRegistries.BLOCKS.register(block);
 		GameRegistry.registerTileEntity(clazz, Reference.MODID + ":transformer_" + tier);
 		ForgeRegistries.ITEMS.register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
-		
+		Reference.transformerBlocks.add(block);
 	}
 
 }
