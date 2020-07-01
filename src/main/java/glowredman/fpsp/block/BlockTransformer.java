@@ -31,6 +31,8 @@ public class BlockTransformer extends Block implements ITileEntityProvider {
 	public final long in;
 	public final long out;
 	public static final PropertyEnum<EnumFacing> INPUT = PropertyEnum.create("input", EnumFacing.class);
+	
+	public static int clicker;
 
 	public BlockTransformer(int outputTier) {
 		super(Material.IRON);
@@ -54,9 +56,10 @@ public class BlockTransformer extends Block implements ITileEntityProvider {
 	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 		TileEntity te = worldIn.getTileEntity(pos);
-		if(te instanceof TileTransformer) {
+		if(te instanceof TileTransformer && hand == EnumHand.MAIN_HAND && clicker < 1) {
 			playerIn.sendMessage(new TextComponentString("Current Energy stored: " + ((TileTransformer) te).buffer + " EU"));
-		}
+			clicker += 2;
+		} else if(clicker > 0) clicker--;
 		return super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
 	}
 	
