@@ -22,20 +22,20 @@ public class CommonProxy {
 		ForgeRegistries.ITEMS.register(new ItemBlock(Reference.STRAIGHT).setRegistryName(Reference.STRAIGHT.getRegistryName()));
 		
 		//Transformer
-		registerTransformer(5, TileTransformerT5.class); //IV
-		registerTransformer(6, TileTransformerT6.class); //LuV
-		registerTransformer(7, TileTransformerT7.class); //ZPM
-		registerTransformer(8, TileTransformerT8.class); //UV
-		registerTransformer(9, TileTransformerT9.class); //UHV
-		registerTransformer(10, TileTransformerT10.class);//UEV
-		registerTransformer(11, TileTransformerT11.class);//UIV
-		registerTransformer(12, TileTransformerT12.class);//UMV
-		registerTransformer(13, TileTransformerT13.class);//UXV
-		registerTransformer(14, TileTransformerT14.class);//MAX
-		registerTransformer(15, TileTransformerT15.class);//OpV
-		registerTransformer(16, TileTransformerT16.class);//ASS
-		registerTransformer(17, TileTransformerT17.class);//GOD
-		registerTransformer(18, TileTransformerT18.class);//EAT
+		registerTransformer(5, TileTransformerT5.class);   //IV
+		registerTransformer(6, TileTransformerT6.class);   //LuV
+		registerTransformer(7, TileTransformerT7.class);   //ZPM
+		registerTransformer(8, TileTransformerT8.class);   //UV
+		registerTransformer(9, TileTransformerT9.class);   //UHV
+		registerTransformer(10, TileTransformerT10.class); //UEV
+		registerTransformer(11, TileTransformerT11.class); //UIV
+		registerTransformer(12, TileTransformerT12.class); //UMV
+		registerTransformer(13, TileTransformerT13.class); //UXV
+		registerTransformer(14, TileTransformerT14.class); //MAX
+		registerTransformer(15, TileTransformerT15.class); //OpV
+		registerTransformer(16, TileTransformerT16.class); //ASS
+		registerTransformer(17, TileTransformerT17.class); //GOD
+		registerTransformer(18, TileTransformerT18.class); //EAT
 	}
 	
 	private void registerTransformer(int tier, Class<? extends TileTransformer> clazz) {

@@ -1,2 +1,32 @@
 tile.fpsp.superconductor.corner.name=§dE.A.T. Corner
 tile.fpsp.superconductor.straight.name=§dE.A.T. Straight
+
+tile.fpsp.transformer.5.name=IV-Transformer
+tile.fpsp.transformer.6.name=LuV-Transformer
+tile.fpsp.transformer.7.name=ZPM-Transformer
+tile.fpsp.transformer.8.name=UV-Transformer
+tile.fpsp.transformer.9.name=UHV-Transformer
+tile.fpsp.transformer.10.name=UEV-Transformer
+tile.fpsp.transformer.11.name=UIV-Transformer
+tile.fpsp.transformer.12.name=UMV-Transformer
+tile.fpsp.transformer.13.name=UXV-Transformer
+tile.fpsp.transformer.14.name=MAX-Transformer
+tile.fpsp.transformer.15.name=OpV-Transformer
+tile.fpsp.transformer.16.name=ASS-Transformer
+tile.fpsp.transformer.17.name=GOD-Transformer
+tile.fpsp.transformer.18.name=EAT-Transformer
+
+fpsp.transformer.5.desc=Insane Voltage
+fpsp.transformer.6.desc=Ludicrous Voltage
+fpsp.transformer.7.desc=Zero-Point-Module Voltage
+fpsp.transformer.8.desc=Ultimate Voltage
+fpsp.transformer.9.desc=Ultimate High Voltage
+fpsp.transformer.10.desc=Ultimate Extreme Voltage
+fpsp.transformer.11.desc=Ultimate Insane Voltage
+fpsp.transformer.12.desc=Ultimate Mega Voltage
+fpsp.transformer.13.desc=Ultimate Extreme Mega Voltage
+fpsp.transformer.14.desc=Maximum Voltage
+fpsp.transformer.15.desc=Overpowered Voltage
+fpsp.transformer.16.desc=Arbritary-Sized-Storage Voltage
+fpsp.transformer.17.desc=Godly Voltage
+fpsp.transformer.18.desc=Electron-Acceleration-Technology Voltage

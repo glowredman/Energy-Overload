@@ -1,0 +1,41 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "fpsp:transformer",
+		"textures": {
+			"in": "fpsp:blocks/transformer/17_in",
+			"out": "fpsp:blocks/transformer/17_out"
+		}
+	},
+	"variants": {
+		"normal": [{}],
+		"inventory": {
+			"model": "fpsp:transformer"
+		},
+		"input": {
+			"north": {
+				"model": "fpsp:transformer"
+			},
+			"east": {
+				"model": "fpsp:transformer",
+				"y": 90
+			},
+			"south": {
+				"model": "fpsp:transformer",
+				"y": 180
+			},
+			"west": {
+				"model": "fpsp:transformer",
+				"y": 270
+			},
+			"up": {
+				"model": "fpsp:transformer",
+				"x": 270
+			},
+			"down": {
+				"model": "fpsp:transformer",
+				"x": 90
+			}
+		}
+	}
+}
