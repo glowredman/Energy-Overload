@@ -22,6 +22,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 
@@ -32,8 +33,6 @@ public class BlockTransformer extends Block implements ITileEntityProvider {
 	public final long out;
 	public static final PropertyEnum<EnumFacing> INPUT = PropertyEnum.create("input", EnumFacing.class);
 	
-	public static int clicker;
-
 	public BlockTransformer(int outputTier) {
 		super(Material.IRON);
 		this.outputTier = outputTier;
@@ -54,21 +53,11 @@ public class BlockTransformer extends Block implements ITileEntityProvider {
 	}
 	
 	@Override
-	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-		TileEntity te = worldIn.getTileEntity(pos);
-		if(te instanceof TileTransformer && hand == EnumHand.MAIN_HAND && clicker < 1) {
-			playerIn.sendMessage(new TextComponentString("Current Energy stored: " + ((TileTransformer) te).buffer + " EU"));
-			clicker += 2;
-		} else if(clicker > 0) clicker--;
-		return super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
-	}
-	
-	@Override
 	public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 		tooltip.add(I18n.translateToLocal(Reference.MODID + ".transformer." + outputTier + ".desc"));
-		tooltip.add("§6Input: " + in + " EU/t");
-		tooltip.add("§6Output: " + out + " EU/t");
-		tooltip.add("§a§oCan convert from/to FE");
+		tooltip.add(TextFormatting.GOLD + "Input: " + in + " EU/t");
+		tooltip.add(TextFormatting.GOLD + "Output: " + out + " EU/t");
+		tooltip.add(TextFormatting.GREEN + "" + TextFormatting.ITALIC + "Can convert from/to RF and FE");
 	}
 	
 	@Override
