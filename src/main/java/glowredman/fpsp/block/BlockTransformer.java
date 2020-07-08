@@ -54,6 +54,7 @@ public class BlockTransformer extends Block implements ITileEntityProvider {
 	
 	@Override
 	public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
+		tooltip.add("Tier: " + outputTier);
 		tooltip.add(I18n.translateToLocal(Reference.MODID + ".transformer." + outputTier + ".desc"));
 		tooltip.add(TextFormatting.GOLD + "Input: " + in + " EU/t");
 		tooltip.add(TextFormatting.GOLD + "Output: " + out + " EU/t");
