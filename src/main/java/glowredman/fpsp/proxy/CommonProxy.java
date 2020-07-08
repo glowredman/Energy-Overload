@@ -29,13 +29,8 @@ public class CommonProxy {
 		registerTransformer(9, TileTransformerT9.class);   //UHV
 		registerTransformer(10, TileTransformerT10.class); //UEV
 		registerTransformer(11, TileTransformerT11.class); //UIV
-		registerTransformer(12, TileTransformerT12.class); //UMV
-		registerTransformer(13, TileTransformerT13.class); //UXV
-		registerTransformer(14, TileTransformerT14.class); //MAX
-		registerTransformer(15, TileTransformerT15.class); //OpV
-		registerTransformer(16, TileTransformerT16.class); //ASS
-		registerTransformer(17, TileTransformerT17.class); //GOD
-		registerTransformer(18, TileTransformerT18.class); //EAT
+		registerTransformer(12, TileTransformerT12.class); //OpV
+		registerTransformer(13, TileTransformerT13.class); //MAX
 	}
 	
 	private void registerTransformer(int tier, Class<? extends TileTransformer> clazz) {

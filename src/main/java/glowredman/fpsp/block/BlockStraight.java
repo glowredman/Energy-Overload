@@ -7,6 +7,7 @@ import glowredman.fpsp.tile.TileStraight;
 import ic2.core.IC2;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
@@ -36,6 +37,7 @@ public class BlockStraight extends Block implements ITileEntityProvider {
 		this.setHarvestLevel("pickaxe", 2);
 		this.setRegistryName("superconductor_straight");
 		this.setResistance(3);
+		this.setSoundType(SoundType.GLASS);
 		this.setUnlocalizedName(Reference.MODID + ".superconductor.straight");
 	}
 	
